@@ -3,33 +3,35 @@ import { useState } from "react";
 import React from "react";
 import { Link } from "react-router-dom";
 
-export const Menuitem = ({showMenu,active}) => {
- 
-
+export const Menuitem = ({ showMenu, active }) => {
   return (
-    <ul className={active ? "flex-col flex-center  fixed inset-0  left-1/4 bg-black/20 backdrop-blur-lg  gap-8 justify-center  md:hidden" : "hidden"}>
-      < Close onClick={showMenu} className='cursor-pointer'/>
+    <div
+      className={`${ 
+        active ? "hidden" : "absolute top-17 w-1/2 right-0 bg-grey-800 backdrop-blur() "
+      }`}
+    >
+      <ul className="flex md:hidden flex-col gap-3 p-2">
+        <li>
+          <Link className="flex w-full hover:bg-black hover:text-white p-1 rounded-md " to="/">Home</Link>
+        </li>
 
-      <li>
-        <Link to="/">Home</Link>{" "}
-      </li>
-
-      <li>
-        <Link to="/">Testimonial</Link>{" "}
-      </li>
-      <li>
-        <Link to="/">Infor</Link>{" "}
-      </li>
-      <li>
-        <Link to="/">Jobs</Link>{" "}
-      </li>
-      <li>
-        <Link to="/">About</Link>{" "}
-      </li>
-      <li>
-        <Link to="/">Contact</Link>{" "}
-      </li>
-    </ul>
+        <li>
+          <Link className="flex w-full hover:bg-black hover:text-white p-1 rounded-md " to="/">Testimonial</Link>
+        </li>
+        <li>
+          <Link className="flex w-full hover:bg-black hover:text-white p-1 rounded-md " to="/">Infor</Link>
+        </li>
+        <li>
+          <Link className="flex w-full hover:bg-black hover:text-white p-1 rounded-md " to="/">Jobs</Link>
+        </li>
+        <li>
+          <Link className="flex w-full hover:bg-black hover:text-white p-1 rounded-md " to="/">About</Link>
+        </li>
+        <li>
+          <Link className="flex w-full hover:bg-black hover:text-white p-1 rounded-md " to="/">Contact</Link>
+        </li>
+      </ul>
+    </div>
   );
 };
 export default Menuitem;
